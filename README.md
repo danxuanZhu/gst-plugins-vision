@@ -10,6 +10,7 @@ GStreamer plugins related to the field of machine vision.
 - edtpdvsrc: Video source for [EDT PDV frame grabbers][1] (Camera Link)
 - euresyssrc: Video source for [Euresys PICOLO, DOMINO and GRABLINK series frame grabbers][3] (analog, Camera Link)
 - idsueyesrc: Video source for [IDS uEye cameras][11] (GigE Vision, USB 2/3, USB3 Vision)
+- impactacquiresrc: Video source for [Balluff Impact Acquire GenICam compliant devices][22] (GigE Vision, USB3 Vision, PCIe)
 - imperxflexsrc: Video source for [IMPERX FrameLink and FrameLink Express frame grabbers][5] (Camera Link)
 - imperxsdisrc: Video source for [IMPERX HD-SDI Express frame grabbers][15] (SDI, HD-SDI)
 - kayasrc: Video source for [KAYA Instruments frame grabbers][16] (Camera Link HS, CoaXPress, 10GigE Vision)
@@ -58,6 +59,9 @@ Capture from a CoaXPress camera via a Kaya Komodo frame grabber, apply AGC to co
 
 Then in another command capture the GigE Vision video via Pleora eBUS and display the video to the screen:
 > `gst-launch-1.0 pleorasrc ! autovideoconvert ! autovideosink`
+
+Capture from a Balluff GenICam compliant device with a requested pixel format (the list of supported pixel formats and other camera parameters can be inspected via `gst-inspect-1.0`):
+> `gst-launch-1.0 impactacquiresrc serial="xxxxxxxx" ! 'video/x-raw, format=GRAY8' ! queue ! autovideosink`
 
 ## Compiling
 
@@ -143,3 +147,4 @@ See also
 [19]: https://www.pleora.com
 [20]: https://www.baslerweb.com/
 [21]: https://www.photometrics.com/qimaging
+[22]: https://www.balluff.com/en-de/products/areas/A0005

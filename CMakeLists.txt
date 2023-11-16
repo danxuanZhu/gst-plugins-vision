@@ -96,6 +96,9 @@ macro_log_feature(IOTECHDAQX_FOUND "IOtech DaqX" "Required to build IOtech DaqX 
 find_package(KAYA)
 macro_log_feature(KAYA_FOUND "KAYA Vision Point" "Required to build KAYA source element" "http://www.kayainstruments.com/" FALSE)
 
+find_package(ImpactAcquire)
+macro_log_feature(IMPACT_ACQUIRE_FOUND "Balluff Impact Acquire" "Required to build Balluff Impact Acquire source element" "https://www.balluff.com/" TRUE)
+
 find_package(Matrox)
 macro_log_feature(MATROX_FOUND "Matrox MIL" "Required to build Matrox MIL source element" "http://www.matrox.com/imaging/" FALSE)
 

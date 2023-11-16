@@ -24,6 +24,10 @@ if (KAYA_FOUND)
 	add_subdirectory (kaya)
 endif (KAYA_FOUND)
 
+if (IMPACT_ACQUIRE_FOUND)
+	add_subdirectory (balluff)
+endif (IMPACT_ACQUIRE_FOUND)
+
 if (MATROX_FOUND)
 	add_subdirectory (matrox)
 endif (MATROX_FOUND)
